@@ -41,6 +41,10 @@ mongoose.connect(process.env.MONGO_URL, {
 
 app.use(cors());
 // Routes
+export default function handler(req, res) {
+  res.status(200).json({ text: 'Hello' });
+}
+
 app.use('/api', require('./routes/auth'));
 app.use('/api', require('./routes/hrSettings'));
 app.use('/api', require('./routes/PersonalDetails'));
